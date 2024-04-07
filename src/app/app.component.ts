@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,9 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  counter = 0;
+  counter = signal(0);
 
   increment() {
-    this.counter++
+    this.counter.set(this.counter() + 1);
   }
 }
