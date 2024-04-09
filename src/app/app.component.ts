@@ -11,9 +11,15 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   counter = signal(0);
 
-  constructor() {
-    const readOnlySignal = this.counter.asReadonly();
-  }
+course = signal({
+  id: 1,
+  title: "Signals Course"
+})
+
+courses = signal([
+  "Signal Course",
+  "Signal Chnage Detection"
+])
 
   increment() {
     this.counter.update(val => val + 1);
